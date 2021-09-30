@@ -1,2 +1,2 @@
-# soldiers-vs-zombies
+# Jaxxon Jargon's Soldiers Vs. Zombies
  
