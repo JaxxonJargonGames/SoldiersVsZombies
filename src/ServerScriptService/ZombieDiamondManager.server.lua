@@ -26,6 +26,7 @@ local function onDiamondTouched(otherPart, diamond)
 		else
 			diamond.Color = BrickColor.new("Lime green").Color
 			diamond:SetAttribute("CloneType", "Soldier")
+			diamond.Sound.Playing = false
 			diamond.Parent.Parent = workspace.Soldier_Diamonds
 		end
 	end
