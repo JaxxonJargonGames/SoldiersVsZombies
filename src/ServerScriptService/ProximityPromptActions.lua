@@ -14,6 +14,8 @@ end
 
 function module.promptTriggeredActions(promptObject, player)
 	local toolName = promptObject.Parent.Parent.Name
+	-- print("ProximityPromptActions - promptTriggeredActions:", toolName)
+	-- print("    promptObject.Enabled:", promptObject.Enabled)
 	WeaponUpgrades.upgradeTool(player, toolName)
 	promptObject.Enabled = false
 end
