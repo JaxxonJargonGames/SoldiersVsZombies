@@ -14,13 +14,13 @@ end
 
 function module.promptTriggeredActions(promptObject, player)
 	if promptObject.Parent.Parent.Name == "TeleportBench_1" then
-		player.Character.Humanoid.RootPart.CFrame.Position = workspace.Building_1.Spawn.CFrame.Position
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_1.Spawn.CFrame
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_2" then
-		player.Character.Humanoid.RootPart.CFrame.Position = workspace.Building_2.Spawn.CFrame.Position
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_2.Spawn.CFrame
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_3" then
-		player.Character.Humanoid.RootPart.CFrame.Position = workspace.Building_3.Spawn.CFrame.Position
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_3.Spawn.CFrame
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_4" then
-		player.Character.Humanoid.RootPart.CFrame.Position = workspace.Building_4.Spawn.CFrame.Position
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_4.Spawn.CFrame
 	else
 		local toolName = promptObject.Parent.Parent.Name
 		-- print("ProximityPromptActions - promptTriggeredActions:", toolName)
