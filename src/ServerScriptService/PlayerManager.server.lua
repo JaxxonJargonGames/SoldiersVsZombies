@@ -113,7 +113,6 @@ local function setupWeaponUpgrades(player)
 		if savedUpgrades then
 			for _, toolName in ipairs(savedUpgrades) do
 				WeaponUpgrades.upgradeTool(player, toolName)
-				workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
 			end
 		end
 	end
