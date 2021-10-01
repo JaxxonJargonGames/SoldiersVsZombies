@@ -24,7 +24,6 @@ function module.promptTriggeredActions(promptObject, player)
 	else
 		local toolName = promptObject.Parent.Parent.Name
 		WeaponUpgrades.upgradeTool(player, toolName)
-		print("promptTriggeredActions - promptObject.Enabled", promptObject.Enabled)
 		promptObject.Enabled = false
 	end
 end
