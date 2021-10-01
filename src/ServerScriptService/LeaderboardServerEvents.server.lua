@@ -19,8 +19,6 @@ local ZOMBIE_KILLED_POINTS = 1
 local SOLDIER_KILLED_POINTS = -10
 local WINDOW_SHATTERED_POINTS = 1
 
-game.Players.CharacterAutoLoads = false
-
 local function addWeapon(player, weapon)
 	if player.Character and not player.Character:FindFirstChild(weapon.Name)  then
 		if not player.Backpack:FindFirstChild(weapon.Name) then
