@@ -23,9 +23,8 @@ function module.promptTriggeredActions(promptObject, player)
 		player.Character.Humanoid.RootPart.CFrame = workspace.Building_4.Spawn.CFrame
 	else
 		local toolName = promptObject.Parent.Parent.Name
-		-- print("ProximityPromptActions - promptTriggeredActions:", toolName)
-		-- print("    promptObject.Enabled:", promptObject.Enabled)
 		WeaponUpgrades.upgradeTool(player, toolName)
+		print("promptTriggeredActions - promptObject.Enabled", promptObject.Enabled)
 		promptObject.Enabled = false
 	end
 end

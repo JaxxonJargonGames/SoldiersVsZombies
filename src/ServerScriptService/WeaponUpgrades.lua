@@ -37,9 +37,7 @@ end
 function module.upgradeTool(player, toolName)
 	local weapon = module.getWeapon(player, toolName)
 	if weapon then
-		-- print("WeaponUpgrades - upgradeTool:", toolName)
-		-- workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
-		-- print("workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled", workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled)
+		workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
 		table.insert(upgrades, toolName)
 		local originalParent = weapon.Parent
 		weapon.Parent = player.Backpack

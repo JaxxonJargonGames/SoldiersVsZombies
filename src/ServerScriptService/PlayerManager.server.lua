@@ -112,8 +112,8 @@ local function setupWeaponUpgrades(player)
 	if success then
 		if savedUpgrades then
 			for _, toolName in ipairs(savedUpgrades) do
-				-- print("LeaderboardServerEvents - setupWeaponUpgrades:", toolName)
 				WeaponUpgrades.upgradeTool(player, toolName)
+				workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
 			end
 		end
 	end
