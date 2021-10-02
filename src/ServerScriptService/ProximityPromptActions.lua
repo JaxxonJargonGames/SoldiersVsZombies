@@ -14,13 +14,13 @@ end
 
 function module.promptTriggeredActions(promptObject, player)
 	if promptObject.Parent.Parent.Name == "TeleportBench_1" then
-		player.Character.Humanoid.RootPart.CFrame = workspace.Building_1.Spawn.CFrame
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_1.Spawn.CFrame + Vector3.new(0, -4, 0)
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_2" then
-		player.Character.Humanoid.RootPart.CFrame = workspace.Building_2.Spawn.CFrame
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_2.Spawn.CFrame + Vector3.new(0, -4, 0)
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_3" then
-		player.Character.Humanoid.RootPart.CFrame = workspace.Building_3.Spawn.CFrame
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_3.Spawn.CFrame + Vector3.new(0, -4, 0)
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_4" then
-		player.Character.Humanoid.RootPart.CFrame = workspace.Building_4.Spawn.CFrame
+		player.Character.Humanoid.RootPart.CFrame = workspace.Building_4.Spawn.CFrame + Vector3.new(0, -4, 0)
 	else
 		local toolName = promptObject.Parent.Parent.Name
 		WeaponUpgrades.upgradeTool(player, toolName)
