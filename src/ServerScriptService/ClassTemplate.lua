@@ -15,5 +15,6 @@ function Foo.new()
             Right = Boo.new(),
         },
     }, Foo)
+end
 
-    return Foo
+return Foo
