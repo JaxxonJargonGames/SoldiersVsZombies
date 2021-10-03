@@ -26,7 +26,7 @@ local function animate(id)
 end
 
 while true do
-	for i, zombie in ipairs(workspace["Zombies"]:GetChildren()) do
+	for _, zombie in ipairs(workspace["Zombies"]:GetChildren()) do
 		humanoid = zombie.Humanoid or zombie:WaitForChild("Humanoid")
 		animator = humanoid:WaitForChild("Animator")
 		index = math.random(1, #animations)
