@@ -70,8 +70,4 @@ while true do
 		clone.Parent = workspace[folderName]
 		task.wait(cooldown / #totalDiamonds)
 	end
-	for _, zombieDiamond in ipairs(totalDiamonds) do
-		local diamond = zombieDiamond.Diamond
-		local particleEmitter = diamond.Parent.DiskWithParticles.ParticleEmitter
-	end
 end
