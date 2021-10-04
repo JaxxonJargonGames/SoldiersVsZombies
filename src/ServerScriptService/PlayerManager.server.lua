@@ -157,12 +157,3 @@ end)
 WindowShatteredEvent.Event:Connect(function(player)
 	player.leaderstats.Points.Value += WINDOW_SHATTERED_POINTS
 end)
-
-local event = Instance.new("RemoteEvent")
-event.Name = "ResetEvent"
-event.OnServerEvent:Connect(function(player)
-	player.leaderstats.Points.Value = STARTING_POINTS
-	WeaponUpgrades.reset()
-	player.Character.Humanoid.Health = 0
-end)
-event.Parent = ReplicatedStorage

@@ -1,4 +1,6 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
+local StarterPack = game:GetService("StarterPack")
 
 local module = {}
 
@@ -51,6 +53,30 @@ function module.upgradeTool(player, toolName)
 			module.upgradeSniperRifle(weapon)
 		end
 		weapon.Parent = originalParent
+	end
+end
+
+function module.upgradeAll()
+	local clone
+	for _, weapon in ipairs(StarterPack:GetChildren()) do
+		print(weapon.Name)
+		if weapon.Name == "Crossbow" then
+			module.upgradeCrossbow(weapon)
+		elseif weapon.Name == "Pistol" then
+			module.upgradePistol(weapon)
+		elseif weapon.Name == "Sniper Rifle" then
+			module.upgradeSniperRifle(weapon)
+		end
+	end
+	for _, weapon in ipairs(ReplicatedStorage.Weapons:GetChildren()) do
+		if not StarterPack:FindFirstChild(weapon.Name) then
+			print(weapon.Name)
+			clone = weapon:Clone()
+			if weapon.Name == "Grenade Launcher" then
+				module.upgradeGrenadeLauncher(clone)
+			end
+			clone.Parent = StarterPack
+		end
 	end
 end
 

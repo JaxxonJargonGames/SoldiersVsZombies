@@ -43,31 +43,37 @@ end
 
 local clone
 
-while true do
+local continue = true
+
+while continue do
 	for _, zombieDiamond in ipairs(totalDiamonds) do
-		local diamond = zombieDiamond.Diamond
-		local cloneType = diamond:GetAttribute("CloneType")
-		local particleEmitter = diamond.Parent.DiskWithParticles.ParticleEmitter
-		local cooldown
-		if cloneType == "Zombie" then
-			clone = ServerStorage.Zombie:Clone()
-			clone.Configuration.AttackDamage.Value = 25
-			clone.Configuration.AttackRadius.Value = math.random(50, 100)
-			clone.Configuration.PatrolRadius.Value = math.random(20, 4000)
-			cooldown = DIAMOND_COOLDOWN
-		elseif cloneType == "Soldier" then
-			clone = ServerStorage.Soldier:Clone()
-			clone.Configuration.AttackDamage.Value = math.random(5, 20)
-			clone.Configuration.AttackDelay.Value = 1
-			clone.Configuration.AttackRadius.Value = 50
-			clone.Configuration.ClipCapacity.Value = 8
-			clone.Configuration.PatrolRadius.Value = math.random(200, 400)
-			clone.Configuration.ReloadDelay.Value = 3
-			cooldown = DIAMOND_COOLDOWN * 2
+		local diamond = zombieDiamond:FindFirstChild("Diamond")
+		if diamond then
+			local cloneType = diamond:GetAttribute("CloneType")
+			local cooldown
+			if cloneType == "Zombie" then
+				clone = ServerStorage.Zombie:Clone()
+				clone.Configuration.AttackDamage.Value = 25
+				clone.Configuration.AttackRadius.Value = math.random(50, 100)
+				clone.Configuration.PatrolRadius.Value = math.random(20, 4000)
+				cooldown = DIAMOND_COOLDOWN
+			elseif cloneType == "Soldier" then
+				clone = ServerStorage.Soldier:Clone()
+				clone.Configuration.AttackDamage.Value = math.random(5, 20)
+				clone.Configuration.AttackDelay.Value = 1
+				clone.Configuration.AttackRadius.Value = 50
+				clone.Configuration.ClipCapacity.Value = 8
+				clone.Configuration.PatrolRadius.Value = math.random(200, 400)
+				clone.Configuration.ReloadDelay.Value = 3
+				cooldown = DIAMOND_COOLDOWN * 2
+			elseif cloneType == "None" then
+				continue = false
+				break
+			end
+			clone.HumanoidRootPart.Position = diamond.Position
+			local folderName = clone.Name .. "s"
+			clone.Parent = workspace[folderName]
+			task.wait(cooldown / #totalDiamonds)
 		end
-		clone.HumanoidRootPart.Position = diamond.Position
-		local folderName = clone.Name .. "s"
-		clone.Parent = workspace[folderName]
-		task.wait(cooldown / #totalDiamonds)
 	end
 end
