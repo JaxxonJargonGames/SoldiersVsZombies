@@ -27,15 +27,15 @@ end
 
 while true do
 	for _, zombie in ipairs(workspace["Zombies"]:GetChildren()) do
-		humanoid = zombie.Humanoid or zombie:WaitForChild("Humanoid")
-		animator = humanoid:WaitForChild("Animator")
-		index = math.random(1, #animations)
-		id = animations[index]
+		humanoid = zombie:FindFirstChild("Humanoid")
 		if humanoid then
+			animator = humanoid:WaitForChild("Animator")
+			index = math.random(1, #animations)
+			id = animations[index]
 			animate(id)
+			cooldown = math.random()
+			task.wait(cooldown)
 		end
-		cooldown = math.random()
-		task.wait(cooldown)
 	end
 	task.wait(0.1)
 end
