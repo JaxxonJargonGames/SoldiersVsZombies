@@ -3,7 +3,8 @@ local ServerStorage = game:GetService("ServerStorage")
 local zombieDiamondsFolder = workspace:WaitForChild("SuperZombie_Diamonds")
 local totalDiamonds = zombieDiamondsFolder:GetChildren()
 
-local DIAMOND_COOLDOWN = 10
+local DIAMOND_COOLDOWN = 1
+SUPER_ZOMBIE_COUNT = 100
 
 local function disableDiamonds(diamonds)
 	for _, diamondModel in ipairs(diamonds) do
@@ -22,7 +23,7 @@ local function enableSuperDiamonds()
 		diamond.Color = BrickColor.new("Really red").Color
 		diamond:SetAttribute("CloneType", "SuperZombie")
 	end
-	for count = 1, 20 do
+	for count = 1, SUPER_ZOMBIE_COUNT / #totalDiamonds do
 		for _, zombieDiamond in ipairs(totalDiamonds) do
 			local diamond = zombieDiamond:FindFirstChild("Diamond")
 			if diamond then
