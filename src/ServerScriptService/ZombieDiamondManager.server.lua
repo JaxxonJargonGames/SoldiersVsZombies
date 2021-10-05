@@ -9,6 +9,8 @@ local ServerStorage = game:GetService("ServerStorage")
 local zombieDiamondsFolder = workspace:WaitForChild("Zombie_Diamonds")
 local totalDiamonds = zombieDiamondsFolder:GetChildren()
 
+local Stage2Event = ServerStorage:WaitForChild("Stage2Event")
+
 local DIAMOND_COOLDOWN = 10
 
 local function onDiamondTouched(otherPart, diamond)
@@ -42,8 +44,13 @@ for _, zombieDiamond in ipairs(totalDiamonds) do
 end
 
 local clone
-
 local continue = true
+
+workspace.Zombies.ChildRemoved:Connect(function(instance)
+	if #workspace.Zombies:GetChildren() == 0 then
+		Stage2Event:Fire()
+	end
+end)
 
 while continue do
 	for _, zombieDiamond in ipairs(totalDiamonds) do
