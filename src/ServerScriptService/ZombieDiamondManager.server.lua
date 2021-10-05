@@ -47,7 +47,7 @@ local clone
 local continue = true
 
 workspace.Zombies.ChildRemoved:Connect(function(instance)
-	if #workspace.Zombies:GetChildren() == 0 then
+	if #workspace.Zombie_Diamonds:GetChildren() == 0 and #workspace.Zombies:GetChildren() == 0 then
 		Stage2Event:Fire()
 	end
 end)
