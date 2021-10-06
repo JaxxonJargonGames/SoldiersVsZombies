@@ -1,4 +1,20 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
+
+local WeaponUpgrades = require(ServerScriptService.WeaponUpgrades)
+
+local STARTING_POINTS = 0
+
+local event = Instance.new("RemoteEvent")
+event.Name = "ResetEvent"
+event.OnServerEvent:Connect(function(player)
+	if player.UserId == game.CreatorId then
+		player.leaderstats.Points.Value = STARTING_POINTS
+		WeaponUpgrades.reset()
+		player.Character.Humanoid.Health = 0
+	end
+end)
+event.Parent = ReplicatedStorage
 
 local function disableDiamonds(diamonds)
 	for _, diamondModel in ipairs(diamonds) do
@@ -23,5 +39,15 @@ event.OnServerEvent:Connect(function(player)
 			zombie.Humanoid.Health = 0
 		end
 		end
+end)
+event.Parent = ReplicatedStorage
+
+local event = Instance.new("RemoteEvent")
+event.Name = "WeaponUpgradesEvent"
+event.OnServerEvent:Connect(function(player)
+	if player.UserId == game.CreatorId then
+		print("Creator Weapon Upgrades In Effect!")
+		WeaponUpgrades.upgradeAll()
+	end
 end)
 event.Parent = ReplicatedStorage
