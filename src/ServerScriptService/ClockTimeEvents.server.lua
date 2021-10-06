@@ -1,18 +1,18 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local ClockTimeModule = require(ReplicatedStorage:WaitForChild("ClockTimeModule"))
+local ClockTime = require(ReplicatedStorage:WaitForChild("ClockTime"))
 
 local event = Instance.new("RemoteEvent")
 event.Name = "ClockTimePauseToggleEvent"
 event.OnServerEvent:Connect(function(player)
-	ClockTimeModule.ClockTimePaused = not ClockTimeModule.ClockTimePaused
+	ClockTime.ClockTimePaused = not ClockTime.ClockTimePaused
 end)
 event.Parent = ReplicatedStorage
 
 local event = Instance.new("RemoteEvent")
 event.Name = "ClockTimeAddHourEvent"
 event.OnServerEvent:Connect(function(player)
-	local time = game.Lighting.ClockTime + ClockTimeModule.ONE_HOUR
+	local time = game.Lighting.ClockTime + ClockTime.ONE_HOUR
 	if time > 24 then
 		time -= 24
 	end
@@ -23,7 +23,7 @@ event.Parent = ReplicatedStorage
 local event = Instance.new("RemoteEvent")
 event.Name = "ClockTimeSubtractHourEvent"
 event.OnServerEvent:Connect(function(player)
-	local time = game.Lighting.ClockTime - ClockTimeModule.ONE_HOUR
+	local time = game.Lighting.ClockTime - ClockTime.ONE_HOUR
 	if time < 0 then
 		time += 24
 	end
@@ -34,7 +34,7 @@ event.Parent = ReplicatedStorage
 local event = Instance.new("RemoteEvent")
 event.Name = "ClockTimeAddMinuteEvent"
 event.OnServerEvent:Connect(function(player)
-	local time = game.Lighting.ClockTime + ClockTimeModule.ONE_MINUTE
+	local time = game.Lighting.ClockTime + ClockTime.ONE_MINUTE
 	if time > 24 then
 		time -= 24
 	end

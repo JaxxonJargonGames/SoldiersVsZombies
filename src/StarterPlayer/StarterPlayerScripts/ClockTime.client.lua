@@ -4,7 +4,6 @@ local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
 
-
 -- Pause/Unpause the incrementing of the ClockTime on the server.
 local ClockTimePauseToggleEvent = ReplicatedStorage:WaitForChild("ClockTimePauseToggleEvent")
 local ACTION_NAME = "ClockTimePauseToggle"
@@ -20,7 +19,6 @@ local function onClockTimePauseToggle(actionName, inputState, inputObject)
 end
 
 ContextActionService:BindAction(ACTION_NAME, onClockTimePauseToggle, CREATE_TOUCH_BUTTON, INPUT_TYPES)
-
 
 -- Increment the ClockTime on the server by one hour.
 local ClockTimeAddHourEvent = ReplicatedStorage:WaitForChild("ClockTimeAddHourEvent")
@@ -38,7 +36,6 @@ end
 
 ContextActionService:BindAction(ACTION_NAME, onClockTimeAddHour, CREATE_TOUCH_BUTTON, INPUT_TYPES)
 
-
 -- Decrement the ClockTime on the server by one hour.
 local ClockTimeAddHourEvent = ReplicatedStorage:WaitForChild("ClockTimeSubtractHourEvent")
 local ACTION_NAME = "ClockTimeSubtractHour"
@@ -54,7 +51,6 @@ local function onClockTimeSubtractHour(actionName, inputState, inputObject)
 end
 
 ContextActionService:BindAction(ACTION_NAME, onClockTimeSubtractHour, CREATE_TOUCH_BUTTON, INPUT_TYPES)
-
 
 -- Increment the ClockTime on the server by one minute.
 local ClockTimeAddMinuteEvent = ReplicatedStorage:WaitForChild("ClockTimeAddMinuteEvent")

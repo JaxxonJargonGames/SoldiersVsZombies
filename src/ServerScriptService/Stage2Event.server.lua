@@ -4,7 +4,7 @@ local zombieDiamondsFolder = workspace:WaitForChild("SuperZombie_Diamonds")
 local totalDiamonds = zombieDiamondsFolder:GetChildren()
 
 local DIAMOND_COOLDOWN = 1
-SUPER_ZOMBIE_COUNT = 100
+local SUPER_ZOMBIE_COUNT = 100
 
 local function disableDiamonds(diamonds)
 	for _, diamondModel in ipairs(diamonds) do

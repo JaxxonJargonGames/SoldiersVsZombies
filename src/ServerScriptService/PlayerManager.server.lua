@@ -7,6 +7,7 @@ local Upgrades = game:GetService("DataStoreService"):GetDataStore("Upgrades")
 
 local LevelChangedEvent = ReplicatedStorage:WaitForChild("LevelChangedEvent")
 local ZombieKilledEvent = ReplicatedStorage:WaitForChild("ZombieKilledEvent")
+local SuperZombieKilledEvent = ReplicatedStorage:WaitForChild("SuperZombieKilledEvent")
 local SoldierKilledEvent = ReplicatedStorage:WaitForChild("SoldierKilledEvent")
 local WindowShatteredEvent = ReplicatedStorage:WaitForChild("WindowShatteredEvent")
 
@@ -16,6 +17,7 @@ local STARTING_POINTS = 0
 local STARTING_LEVEL = 1
 
 local ZOMBIE_KILLED_POINTS = 1
+local SUPER_ZOMBIE_KILLED_POINTS = 5
 local SOLDIER_KILLED_POINTS = -10
 local WINDOW_SHATTERED_POINTS = 1
 
@@ -148,6 +150,10 @@ end)
 
 ZombieKilledEvent.Event:Connect(function(player)
 	player.leaderstats.Points.Value += ZOMBIE_KILLED_POINTS
+end)
+
+SuperZombieKilledEvent.Event:Connect(function(player)
+	player.leaderstats.Points.Value += SUPER_ZOMBIE_KILLED_POINTS
 end)
 
 SoldierKilledEvent.Event:Connect(function(player)

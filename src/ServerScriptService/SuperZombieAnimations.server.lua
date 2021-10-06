@@ -11,11 +11,11 @@ local animations = {
 	"507770239", -- wave
 }
 
-local humanoid
 local animator
-local index
-local id
 local cooldown
+local humanoid
+local id
+local index
 
 local function animate(id)
 	local animation = Instance.new("Animation")

@@ -43,14 +43,14 @@ for _, zombieDiamond in ipairs(totalDiamonds) do
 	end)
 end
 
-local clone
-local continue = true
-
 workspace.Zombies.ChildRemoved:Connect(function(instance)
 	if #workspace.Zombie_Diamonds:GetChildren() == 0 and #workspace.Zombies:GetChildren() == 0 then
 		Stage2Event:Fire()
 	end
 end)
+
+local clone
+local continue = true
 
 while continue do
 	for _, zombieDiamond in ipairs(totalDiamonds) do

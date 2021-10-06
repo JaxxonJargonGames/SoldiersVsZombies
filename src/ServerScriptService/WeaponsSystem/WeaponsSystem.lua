@@ -429,6 +429,7 @@ end
 
 -- Modified so that certain weapons can destroy glass windows as determined by a custom attribute.
 local ZombieKilledEvent = ReplicatedStorage:WaitForChild("ZombieKilledEvent")
+local SuperZombieKilledEvent = ReplicatedStorage:WaitForChild("SuperZombieKilledEvent")
 local SoldierKilledEvent = ReplicatedStorage:WaitForChild("SoldierKilledEvent")
 local WindowShatteredEvent = ReplicatedStorage:WaitForChild("WindowShatteredEvent")
 
