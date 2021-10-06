@@ -13,13 +13,15 @@ end
 local event = Instance.new("RemoteEvent")
 event.Name = "Stage2BackdoorEvent"
 event.OnServerEvent:Connect(function(player)
-	player.leaderstats.Points.Value = 320
-	player.Character.Humanoid.Health = 100
-	disableDiamonds(workspace.Zombie_Diamonds:GetChildren())
-	disableDiamonds(workspace.Soldier_Diamonds:GetChildren())
-	task.wait(1)
-	for _, zombie in ipairs(workspace.Zombies:GetChildren()) do
-		zombie.Humanoid.Health = 0
-	end
+	if player.UserId == game.CreatorId then
+		player.leaderstats.Points.Value = 320
+		player.Character.Humanoid.Health = 100
+		disableDiamonds(workspace.Zombie_Diamonds:GetChildren())
+		disableDiamonds(workspace.Soldier_Diamonds:GetChildren())
+		task.wait(1)
+		for _, zombie in ipairs(workspace.Zombies:GetChildren()) do
+			zombie.Humanoid.Health = 0
+		end
+		end
 end)
 event.Parent = ReplicatedStorage
