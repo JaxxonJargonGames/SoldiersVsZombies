@@ -47,7 +47,7 @@ event.Name = "WeaponUpgradesEvent"
 event.OnServerEvent:Connect(function(player)
 	if player.UserId == game.CreatorId then
 		print("Creator Weapon Upgrades In Effect!")
-		WeaponUpgrades.upgradeAll(player)
+		WeaponUpgrades.upgradeAll()
 	end
 end)
 event.Parent = ReplicatedStorage
