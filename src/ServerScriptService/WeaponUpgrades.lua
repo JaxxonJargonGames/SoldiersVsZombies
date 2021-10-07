@@ -56,26 +56,15 @@ function module.upgradeTool(player, toolName)
 	end
 end
 
-function module.upgradeAll()
-	local clone
-	for _, weapon in ipairs(StarterPack:GetChildren()) do
-		print(weapon.Name)
-		if weapon.Name == "Crossbow" then
-			module.upgradeCrossbow(weapon)
-		elseif weapon.Name == "Pistol" then
-			module.upgradePistol(weapon)
-		elseif weapon.Name == "Sniper Rifle" then
-			module.upgradeSniperRifle(weapon)
-		end
+function module.upgradeAll(player)
+	for _, tool in ipairs(StarterPack:GetChildren()) do
+		module.upgradeTool(player, tool.Name)
 	end
-	for _, weapon in ipairs(ReplicatedStorage.Weapons:GetChildren()) do
-		if not StarterPack:FindFirstChild(weapon.Name) then
-			print(weapon.Name)
-			clone = weapon:Clone()
-			if weapon.Name == "Grenade Launcher" then
-				module.upgradeGrenadeLauncher(clone)
+	for _, tool in ipairs(ReplicatedStorage.Weapons:GetChildren()) do
+		if not StarterPack:FindFirstChild(tool.Name) then
+			if tool.Name == "Grenade Launcher" then
+				module.upgradeTool(player, tool.Name)
 			end
-			clone.Parent = StarterPack
 		end
 	end
 end

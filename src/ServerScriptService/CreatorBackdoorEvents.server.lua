@@ -26,19 +26,25 @@ local function disableDiamonds(diamonds)
 	end
 end
 
+local function setupAllWeaponsAndUpgrades(player)
+	print("Creator Weapon Upgrades In Effect!")
+	player.leaderstats.Points.Value = 320
+	player.Character.Humanoid.Health = 100
+	WeaponUpgrades.upgradeAll(player)
+end
+
 local event = Instance.new("RemoteEvent")
 event.Name = "Stage2BackdoorEvent"
 event.OnServerEvent:Connect(function(player)
 	if player.UserId == game.CreatorId then
-		player.leaderstats.Points.Value = 320
-		player.Character.Humanoid.Health = 100
+		setupAllWeaponsAndUpgrades(player)
 		disableDiamonds(workspace.Zombie_Diamonds:GetChildren())
 		disableDiamonds(workspace.Soldier_Diamonds:GetChildren())
 		task.wait(1)
 		for _, zombie in ipairs(workspace.Zombies:GetChildren()) do
 			zombie.Humanoid.Health = 0
 		end
-		end
+	end
 end)
 event.Parent = ReplicatedStorage
 
@@ -46,8 +52,7 @@ local event = Instance.new("RemoteEvent")
 event.Name = "WeaponUpgradesEvent"
 event.OnServerEvent:Connect(function(player)
 	if player.UserId == game.CreatorId then
-		print("Creator Weapon Upgrades In Effect!")
-		WeaponUpgrades.upgradeAll()
+		setupAllWeaponsAndUpgrades(player)
 	end
 end)
 event.Parent = ReplicatedStorage

@@ -59,6 +59,7 @@ local function onPointsChanged(player, newPointsValue, level)
 end
 
 local function onLevelChanged(player, newLevelValue)
+	workspace.Weapons["Grenade Launcher"].ProximityPromptPart.ProximityPrompt.Enabled = false
 	if newLevelValue >= 2 then
 		local weapon = ReplicatedStorage.Weapons["Grenade Launcher"]
 		addWeapon(player, weapon)
