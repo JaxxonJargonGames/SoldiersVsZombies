@@ -15,6 +15,7 @@ local UPGRADEABLE_TOOLS = {
 
 function module.reset()
 	upgrades = {}
+	workspace.Weapons["Sniper Rifle"].ProximityPromptPart.ProximityPrompt.Enabled = true
 end
 
 function module.upgradeCrossbow(weapon)
