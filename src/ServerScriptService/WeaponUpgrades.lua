@@ -65,7 +65,7 @@ end
 
 function module.upgradeAll(player)
 	for _, toolName in ipairs(UPGRADEABLE_TOOLS) do
-		module.upgradeTool(player, tool.name)
+		module.upgradeTool(player, toolName)
 	end
 end
 
