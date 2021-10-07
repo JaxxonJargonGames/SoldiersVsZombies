@@ -6,6 +6,13 @@ local module = {}
 
 local upgrades = {}
 
+local UPGRADEABLE_TOOLS = {
+	"Crossbow",
+	"Grenade Launcher",
+	"Pistol",
+	"Sniper Rifle",
+}
+
 function module.reset()
 	upgrades = {}
 end
@@ -42,7 +49,7 @@ function module.upgradeTool(player, toolName)
 		workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
 		table.insert(upgrades, toolName)
 		local originalParent = weapon.Parent
-		weapon.Parent = player.Backpack
+		weapon.Parent = player.Backpack		
 		if toolName == "Crossbow" then
 			module.upgradeCrossbow(weapon)
 		elseif toolName == "Grenade Launcher" then
@@ -57,15 +64,8 @@ function module.upgradeTool(player, toolName)
 end
 
 function module.upgradeAll(player)
-	for _, tool in ipairs(StarterPack:GetChildren()) do
-		module.upgradeTool(player, tool.Name)
-	end
-	for _, tool in ipairs(ReplicatedStorage.Weapons:GetChildren()) do
-		if not StarterPack:FindFirstChild(tool.Name) then
-			if tool.Name == "Grenade Launcher" then
-				module.upgradeTool(player, tool.Name)
-			end
-		end
+	for _, toolName in ipairs(UPGRADEABLE_TOOLS)
+		module.upgradeTool(player, tool.name)
 	end
 end
 
