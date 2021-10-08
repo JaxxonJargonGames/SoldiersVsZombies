@@ -7,7 +7,6 @@ local Players = game:GetService("Players")
 local ServerStorage = game:GetService("ServerStorage")
 
 local zombieDiamondsFolder = workspace:WaitForChild("Zombie_Diamonds")
-local totalDiamonds = zombieDiamondsFolder:GetChildren()
 
 local Stage2Event = ServerStorage:WaitForChild("Stage2Event")
 
@@ -34,7 +33,7 @@ local function onDiamondTouched(otherPart, diamond)
 	end
 end
 
-for _, zombieDiamond in ipairs(totalDiamonds) do
+for _, zombieDiamond in ipairs(zombieDiamondsFolder:GetChildren()) do
 	local diamond = zombieDiamond.Diamond
 	diamond.Color = BrickColor.new("Really red").Color
 	diamond:SetAttribute("CloneType", "Zombie")
@@ -52,7 +51,11 @@ end)
 local clone
 local continue = true
 
-while continue do
+while continue and task.wait(0.1) do
+	local totalDiamonds = zombieDiamondsFolder:GetChildren()
+	if #totalDiamonds == 0 then
+		continue = false
+	end
 	for _, zombieDiamond in ipairs(totalDiamonds) do
 		local diamond = zombieDiamond:FindFirstChild("Diamond")
 		if diamond then
@@ -73,9 +76,6 @@ while continue do
 				clone.Configuration.PatrolRadius.Value = math.random(200, 400)
 				clone.Configuration.ReloadDelay.Value = 3
 				cooldown = DIAMOND_COOLDOWN * 2
-			elseif cloneType == "None" then
-				continue = false
-				break
 			end
 			clone.HumanoidRootPart.Position = diamond.Position
 			local folderName = clone.Name .. "s"
