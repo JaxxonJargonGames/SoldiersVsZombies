@@ -1,23 +1,13 @@
 local ServerStorage = game:GetService("ServerStorage")
 
 local zombieDiamondsFolder = workspace:WaitForChild("SuperZombie_Diamonds")
-local totalDiamonds = zombieDiamondsFolder:GetChildren()
 
-local DIAMOND_COOLDOWN = 1
+local DIAMOND_COOLDOWN = 2
 local SUPER_ZOMBIE_COUNT = 100
-
-local function disableDiamonds(diamonds)
-	for _, diamondModel in ipairs(diamonds) do
-		diamondModel.Diamond:SetAttribute("CloneType", "None")
-		diamondModel.Diamond.Transparency = 1
-		diamondModel.Diamond.CanTouch = false
-		diamondModel.DiskWithParticles.ParticleEmitter.Enabled = false
-		diamondModel.Parent = workspace.Disabled_Diamonds
-	end
-end
 
 local function enableSuperDiamonds()
 	local clone
+	local totalDiamonds = zombieDiamondsFolder:GetChildren()
 	for _, zombieDiamond in ipairs(totalDiamonds) do
 		local diamond = zombieDiamond.Diamond
 		diamond.Color = BrickColor.new("Really red").Color
@@ -45,11 +35,17 @@ local function enableSuperDiamonds()
 	end
 end
 
+local function enableOrbs()
+	for _, orb in ipairs(workspace.SuperZombie_Orbs:GetChildren()) do
+		orb.Transparency = 0
+	end
+end
+
 local event = Instance.new("BindableEvent")
 event.Name = "Stage2Event"
 event.Event:Connect(function()
-	disableDiamonds(workspace.Zombie_Diamonds:GetChildren())
-	disableDiamonds(workspace.Soldier_Diamonds:GetChildren())
+	workspace.Soldier_Diamonds:ClearAllChildren()
+	enableOrbs()
 	enableSuperDiamonds()
 end)
 event.Parent = ServerStorage
