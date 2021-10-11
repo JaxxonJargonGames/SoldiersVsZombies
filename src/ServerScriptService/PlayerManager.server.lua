@@ -128,10 +128,10 @@ game.Players.PlayerAdded:Connect(function(player)
 		if respawn then
 			onLevelChanged(player, player.leaderstats.Level.Value)
 		end
+		setupWeaponUpgrades(player)
 	end)
 	player:LoadCharacter()
 	setupLeaderboard(player)
-	setupWeaponUpgrades(player)
 end)
 
 game.Players.PlayerRemoving:Connect(function(player)
