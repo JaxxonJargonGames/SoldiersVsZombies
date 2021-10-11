@@ -15,7 +15,6 @@ local UPGRADEABLE_TOOLS = {
 
 function module.reset()
 	upgrades = {}
-	workspace.Weapons["Sniper Rifle"].ProximityPromptPart.ProximityPrompt.Enabled = true
 end
 
 function module.upgradeCrossbow(weapon)
@@ -47,7 +46,6 @@ end
 function module.upgradeTool(player, toolName)
 	local weapon = module.getWeapon(player, toolName)
 	if weapon then
-		workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
 		table.insert(upgrades, toolName)
 		local originalParent = weapon.Parent
 		weapon.Parent = player.Backpack		
@@ -67,6 +65,25 @@ end
 function module.upgradeAll(player)
 	for _, toolName in ipairs(UPGRADEABLE_TOOLS) do
 		module.upgradeTool(player, toolName)
+	end
+end
+
+function module.processWeaponUpgrades(player, savedUpgrades)
+	if savedUpgrades then
+		for _, toolName in ipairs(savedUpgrades) do
+			module.upgradeTool(player, toolName)
+		end
+	end
+	for _, toolName in ipairs(UPGRADEABLE_TOOLS) do
+		if table.find(savedUpgrades, toolName) then
+			workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
+		else
+			if module.getWeapon(player, toolName) then
+				workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = true
+			else
+				workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
+			end
+		end
 	end
 end
 

@@ -59,7 +59,6 @@ local function onPointsChanged(player, newPointsValue, level)
 end
 
 local function onLevelChanged(player, newLevelValue)
-	workspace.Weapons["Grenade Launcher"].ProximityPromptPart.ProximityPrompt.Enabled = false
 	if newLevelValue >= 2 then
 		local weapon = ReplicatedStorage.Weapons["Grenade Launcher"]
 		addWeapon(player, weapon)
@@ -113,20 +112,19 @@ local function setupWeaponUpgrades(player)
 		return Upgrades:GetAsync(player.UserId)
 	end)
 	if success then
-		if savedUpgrades then
-			for _, toolName in ipairs(savedUpgrades) do
-				WeaponUpgrades.upgradeTool(player, toolName)
-			end
-		end
+		WeaponUpgrades.processWeaponUpgrades(player, savedUpgrades)
 	end
 end
 
 game.Players.PlayerAdded:Connect(function(player)
+	print("Player Added")
 	player.CharacterAdded:Connect(function(character)
+		print("Character Added")
 		local humanoid = character:WaitForChild("Humanoid")
 		humanoid.Died:Connect(function()
+			print("humanoid Died with player.leaderstats.Points.Value", player.leaderstats.Points.Value)
 			player:LoadCharacter()
-			player.leaderstats.Points.Value = STARTING_POINTS
+			-- player.leaderstats.Points.Value = STARTING_POINTS
 		end)
 	end)
 	player:LoadCharacter()
