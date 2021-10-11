@@ -118,11 +118,16 @@ local function setupWeaponUpgrades(player)
 end
 
 game.Players.PlayerAdded:Connect(function(player)
+	respawn = false
 	player.CharacterAdded:Connect(function(character)
 		local humanoid = character:WaitForChild("Humanoid")
 		humanoid.Died:Connect(function()
+			respawn = true
 			player:LoadCharacter()
 		end)
+		if respawn then
+			onLevelChanged(player, player.leaderstats.Level.Value)
+		end
 	end)
 	player:LoadCharacter()
 	setupLeaderboard(player)
