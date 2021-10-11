@@ -28,6 +28,7 @@ local function addWeapon(player, weapon)
 		if not player.Backpack:FindFirstChild(weapon.Name) then
 			local clone = weapon:Clone()
 			clone.Parent = player.Backpack
+			workspace.Weapons[weapon.Name].ProximityPromptPart.ProximityPrompt.Enabled = true
 		end
 	end
 end
@@ -117,14 +118,10 @@ local function setupWeaponUpgrades(player)
 end
 
 game.Players.PlayerAdded:Connect(function(player)
-	print("Player Added")
 	player.CharacterAdded:Connect(function(character)
-		print("Character Added")
 		local humanoid = character:WaitForChild("Humanoid")
 		humanoid.Died:Connect(function()
-			print("humanoid Died with player.leaderstats.Points.Value", player.leaderstats.Points.Value)
 			player:LoadCharacter()
-			-- player.leaderstats.Points.Value = STARTING_POINTS
 		end)
 	end)
 	player:LoadCharacter()

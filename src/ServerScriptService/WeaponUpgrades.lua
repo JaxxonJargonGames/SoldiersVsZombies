@@ -62,7 +62,6 @@ function module.upgradeTool(player, toolName)
 	local weapon = module.getWeapon(player, toolName)
 	if weapon then
 		table.insert(upgrades, toolName)
-		print("Disabling proximity prompt for tool:", toolName)
 		workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
 		local originalParent = weapon.Parent
 		weapon.Parent = player.Backpack		
