@@ -10,7 +10,7 @@ event.Name = "ResetEvent"
 event.OnServerEvent:Connect(function(player)
 	if player.UserId == game.CreatorId then
 		player.leaderstats.Points.Value = STARTING_POINTS
-		WeaponUpgrades.reset()
+		WeaponUpgrades.reset(player)
 		player.Character.Humanoid.Health = 0
 	end
 end)
