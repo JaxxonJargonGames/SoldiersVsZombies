@@ -273,6 +273,7 @@ function ShoulderCamera:setEnabled(enabled)
 
 		if self.currentCamera then
 			self.currentCamera.CameraType = Enum.CameraType.Custom
+			self.currentCamera.CameraSubject = self.currentHumanoid -- Added to fix camera issues.
 		end
 
 		self:updateZoomState()

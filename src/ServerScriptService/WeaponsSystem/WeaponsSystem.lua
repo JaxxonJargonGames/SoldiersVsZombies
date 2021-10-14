@@ -1,6 +1,8 @@
 local CollectionService = game:GetService("CollectionService")
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SoundService = game:GetService("SoundService")
 
 local IsServer = RunService:IsServer()
 
@@ -182,7 +184,7 @@ function WeaponsSystem.setup()
 		end
 
 		WeaponsSystem.networkFolder = networkFolder
-		WeaponsSystem.camera:setEnabled(true)
+		--WeaponsSystem.camera:setEnabled(true) -- Removed to fix camera issues.
 	end
 
 	--Setup weapon tools and listening
@@ -392,6 +394,7 @@ function WeaponsSystem.setWeaponEquipped(weapon, equipped)
 	end
 
 	if WeaponsSystem.gui then
+		WeaponsSystem.camera:setEnabled(hasWeapon)  -- Added to fix camera issues.
 		WeaponsSystem.gui:setEnabled(hasWeapon)
 
 		if WeaponsSystem.currentWeapon then
@@ -424,9 +427,41 @@ function WeaponsSystem.getPlayerFromHumanoid(humanoid)
 	end
 end
 
+-- Modified so that certain weapons can destroy glass windows as determined by a custom attribute.
+local ZombieKilledEvent = ReplicatedStorage:WaitForChild("ZombieKilledEvent")
+local SuperZombieKilledEvent = ReplicatedStorage:WaitForChild("SuperZombieKilledEvent")
+local SoldierKilledEvent = ReplicatedStorage:WaitForChild("SoldierKilledEvent")
+local WindowShatteredEvent = ReplicatedStorage:WaitForChild("WindowShatteredEvent")
+
+local windowColor = BrickColor.new("Bright blue")
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://5961220911" -- Glass shatter.
+sound.Volume = 5
+
 local function _defaultDamageCallback(system, target, amount, damageType, dealer, hitInfo, damageData)
 	if target:IsA("Humanoid") then
-		target:TakeDamage(amount)
+		if not WeaponsSystem.getPlayerFromHumanoid(target) then
+			target:TakeDamage(amount)
+			if target.Parent.Name == "Zombie" then
+				if target.Health == 0 then
+					ZombieKilledEvent:Fire(dealer)
+				end
+			elseif target.Parent.Name == "Soldier" then
+				if target.Health == 0 then
+					SoldierKilledEvent:Fire(dealer)
+				end
+			end
+		end
+	elseif target.BrickColor == windowColor and target.Transparency == 0.5 then
+		local tool = dealer.Character:FindFirstChildOfClass("Tool")
+		if tool:GetAttribute("CanBreakGlass") then
+			sound.Parent = target
+			sound:Play()
+			sound.Parent = SoundService
+			task.wait(0.25)
+			target:Destroy()
+			WindowShatteredEvent:Fire(dealer)
+		end
 	end
 end
 
