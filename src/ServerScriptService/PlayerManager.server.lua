@@ -163,8 +163,8 @@ local function saveUpgrades(player)
 end
 
 game.Players.PlayerRemoving:Connect(function(player)
-	saveLeaderboard(player)
 	saveUpgrades(player)
+	saveLeaderboard(player)
 end)
 
 ZombieKilledEvent.Event:Connect(function(player)
