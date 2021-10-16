@@ -28,7 +28,10 @@ local function setupProximityPrompts(player, toolUpgrades)
 end
 
 function module.reset(player)
+	print("module.reset")
+	print("upgrades count before reset", #upgrades)
 	upgrades = {}
+	print("upgrades count after reset", #upgrades)
 	setupProximityPrompts(player, upgrades)
 end
 
@@ -59,9 +62,12 @@ function module.getUpgrades()
 end
 
 function module.upgradeTool(player, toolName)
+	print("module.upgradeTool", toolName)
 	local weapon = module.getWeapon(player, toolName)
 	if weapon then
-		table.insert(upgrades, toolName)
+		if not table.find(upgrades, toolName) then
+			table.insert(upgrades, toolName)
+		end
 		workspace.Weapons[toolName].ProximityPromptPart.ProximityPrompt.Enabled = false
 		local originalParent = weapon.Parent
 		weapon.Parent = player.Backpack		
@@ -85,8 +91,10 @@ function module.upgradeAll(player)
 end
 
 function module.processWeaponUpgrades(player, savedUpgrades)
+	print("module.processWeaponUpgrades savedUpgrades count", #savedUpgrades)
 	if savedUpgrades then
 		for _, toolName in ipairs(savedUpgrades) do
+			print("processWeaponUpgrades", toolName)
 			module.upgradeTool(player, toolName)
 		end
 	end

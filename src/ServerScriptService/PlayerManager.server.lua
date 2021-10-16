@@ -28,7 +28,9 @@ local function addWeapon(player, weapon)
 		if not player.Backpack:FindFirstChild(weapon.Name) then
 			local clone = weapon:Clone()
 			clone.Parent = player.Backpack
-			workspace.Weapons[weapon.Name].ProximityPromptPart.ProximityPrompt.Enabled = true
+			if workspace.Weapons:FindFirstChild(weapon.Name) then
+				workspace.Weapons[weapon.Name].ProximityPromptPart.ProximityPrompt.Enabled = true
+			end
 		end
 	end
 end
@@ -109,6 +111,7 @@ local function setupLeaderboard(player)
 end
 
 local function setupWeaponUpgrades(player)
+	print("setupWeaponUpgrades")
 	local success, savedUpgrades = pcall(function()
 		return Upgrades:GetAsync(player.UserId)
 	end)
@@ -118,35 +121,50 @@ local function setupWeaponUpgrades(player)
 end
 
 game.Players.PlayerAdded:Connect(function(player)
+	print("PlayerAdded")
 	respawn = false
 	player.CharacterAdded:Connect(function(character)
+		print("CharacterAdded")
 		local humanoid = character:WaitForChild("Humanoid")
 		humanoid.Died:Connect(function()
+			print("humanoid died")
 			respawn = true
 			player:LoadCharacter()
 		end)
 		if respawn then
+			print("respawn")
 			onLevelChanged(player, player.leaderstats.Level.Value)
+			WeaponUpgrades.processWeaponUpgrades(player, WeaponUpgrades.getUpgrades())
 		end
-		setupWeaponUpgrades(player)
 	end)
 	player:LoadCharacter()
 	setupLeaderboard(player)
+	setupWeaponUpgrades(player)
 end)
 
-game.Players.PlayerRemoving:Connect(function(player)
+local function saveLeaderboard(player)
+	print("game.Players.PlayerRemoving saveLeaderboard")
 	local success, errorMessage = pcall(function()
 		PlayerPoints:SetAsync(player.UserId, player.leaderstats.Points.Value)
 	end)
 	if not success then
 		warn(errorMessage)
 	end
+end
+
+local function saveUpgrades(player)
+	print("game.Players.PlayerRemoving saveUpgrades count", #WeaponUpgrades.getUpgrades())
 	local success, errorMessage = pcall(function()
 		Upgrades:SetAsync(player.UserId, WeaponUpgrades.getUpgrades())
 	end)
 	if not success then
 		warn(errorMessage)
 	end
+end
+
+game.Players.PlayerRemoving:Connect(function(player)
+	saveLeaderboard(player)
+	saveUpgrades(player)
 end)
 
 ZombieKilledEvent.Event:Connect(function(player)
