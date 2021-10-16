@@ -18,7 +18,7 @@ event.Parent = ReplicatedStorage
 
 local function setupAllWeaponsAndUpgrades(player)
 	print("Creator Weapon Upgrades In Effect!")
-	player.leaderstats.Points.Value = 320
+	player.leaderstats.Points.Value = 160
 	player.Character.Humanoid.Health = 100
 	WeaponUpgrades.upgradeAll(player)
 end
