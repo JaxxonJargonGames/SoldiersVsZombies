@@ -54,7 +54,7 @@ local function onPointsChanged(player, newPointsValue, level)
 			level.Value = 4
 		end
 	end
-	if newPointsValue >= 320 then
+	if newPointsValue >= 160 then
 		if level.Value < 5 then
 			level.Value = 5
 		end
