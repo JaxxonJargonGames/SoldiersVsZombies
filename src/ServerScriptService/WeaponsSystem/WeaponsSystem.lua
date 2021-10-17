@@ -446,6 +446,10 @@ local function _defaultDamageCallback(system, target, amount, damageType, dealer
 				if target.Health == 0 then
 					ZombieKilledEvent:Fire(dealer)
 				end
+			elseif target.Parent.Name == "SuperZombie" then
+				if target.Health == 0 then
+					SuperZombieKilledEvent:Fire(dealer)
+				end
 			elseif target.Parent.Name == "Soldier" then
 				if target.Health == 0 then
 					SoldierKilledEvent:Fire(dealer)
