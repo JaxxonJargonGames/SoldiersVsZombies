@@ -165,6 +165,7 @@ end
 game.Players.PlayerRemoving:Connect(function(player)
 	saveUpgrades(player)
 	saveLeaderboard(player)
+	print("Finished Player Removing")
 end)
 
 ZombieKilledEvent.Event:Connect(function(player)
