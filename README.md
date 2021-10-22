@@ -18,6 +18,8 @@ As you gain points you move up a level at certain milestones. With each new leve
 
 ### How does the game begin?
 
+The game begins with your character facing City Hall. To the left is a bus stop. To the right is the town square.
+
 ![RobloxScreenShot20211022_095528798](https://user-images.githubusercontent.com/91476507/138496974-7990a742-728e-4c01-8a9f-3906d8376509.png)
 
 ### Where do I find the sniper rifle upgrade?
