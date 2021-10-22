@@ -18,10 +18,16 @@ As you gain points you move up a level at certain milestones. With each new leve
 
 ### How does the game begin?
 
-The game begins with your character facing City Hall. To the left is a bus stop. To the right is the town square.
+The game begins with your character facing City Hall. To the left is a bus stop. To the right is the town square. Further to the right is a one-story office building containing one of the red zombie diamonds. Zombies start spawning automatically from the four zombie diamonds.
 
 ![RobloxScreenShot20211022_095528798](https://user-images.githubusercontent.com/91476507/138496974-7990a742-728e-4c01-8a9f-3906d8376509.png)
 
 ### Where do I find the sniper rifle upgrade?
 
 ![RobloxScreenShot20211022_093108428](https://user-images.githubusercontent.com/91476507/138491974-5edbe5fb-67d4-406b-9338-fa6c23efa40f.png)
+
+### Where do I find the grenade launcher upgrade?
+
+![RobloxScreenShot20211022_103516046](https://user-images.githubusercontent.com/91476507/138499150-00b62559-bcda-4539-9e28-244f3c541200.png)
+
+
