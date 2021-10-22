@@ -13,3 +13,9 @@ One key to eliminating all the zombies is to understand where they come from. Wh
 Another key is knowing about your weapons and how to use them. When you first enter the game your backpack contains a pistol, crossbow, and sniper rifle. The crossbow is pretty handy at shooting zombies. The sniper rifle is the only one of the three that can shoot through the glass windows. You score points when you shoot a window (1 point) or a zombie (1 point). If you accidentally shoot a soldier you lose 10 points.
 
 As you gain points you move up a level at certain milestones. With each new level you receive a new weapon in your backpack: 20 points earns Level 2 and gets you a grenade launcher, 40 points earns Level 3 and gets you an automatic rifle, 80 points earns Level 4 and gets you a rocket launcher, and 160 points earns Level 5 and gets you a railgun. The grenade launcher, rocket launcher and railgun are all capable of shattering multiple windows which allows you to score points.
+
+## FAQ
+
+Where can I find the sniper rifle upgrade?
+
+![RobloxScreenShot20211022_093108428](https://user-images.githubusercontent.com/91476507/138491974-5edbe5fb-67d4-406b-9338-fa6c23efa40f.png)
