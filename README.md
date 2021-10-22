@@ -16,6 +16,10 @@ As you gain points you move up a level at certain milestones. With each new leve
 
 ## FAQ
 
-Where can I find the sniper rifle upgrade?
+How does the game begin?
+
+![RobloxScreenShot20211022_091851375](https://user-images.githubusercontent.com/91476507/138492738-109d8986-7c61-4975-bfbe-f4a91368ef56.png)
+
+Where do I find the sniper rifle upgrade?
 
 ![RobloxScreenShot20211022_093108428](https://user-images.githubusercontent.com/91476507/138491974-5edbe5fb-67d4-406b-9338-fa6c23efa40f.png)
