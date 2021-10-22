@@ -7,3 +7,7 @@ Here is the point system: one point for every zombie killed, one point for every
 This game can be played on Roblox here: https://www.roblox.com/games/7178572180/Jaxxon-Jargons-Soldiers-Vs-Zombies
 
 ![RobloxScreenShot20211018_103536150](https://user-images.githubusercontent.com/91476507/138190458-6288e1cc-f481-4388-b0f6-fa1e57e58c21.png)
+
+One key to eliminating all the zombies is to understand where they come from. When the game begins there are four red, zombie-spawning diamonds located in each of the four office buildings. And while not a lot is known or understood about these diamonds, we do know that they spawn zombies and that they can be converted to a portal that allows our military to send soldiers through the diamonds. When you touch or pass through one of these diamonds they change from red to green and allow friendly soldiers to enter the game space and help shoot the zombies.
+
+Another key is knowing about your weapons and how to use them. When you first enter the game your backpack contains a pistol, crossbow, and sniper rifle.
