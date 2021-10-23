@@ -22,6 +22,14 @@ The game begins with your character facing City Hall. To the left is a bus stop.
 
 ![RobloxScreenShot20211022_095528798](https://user-images.githubusercontent.com/91476507/138496974-7990a742-728e-4c01-8a9f-3906d8376509.png)
 
+### Where do I find the pistol upgrade?
+
+![RobloxScreenShot20211022_173531780](https://user-images.githubusercontent.com/91476507/138535670-bcf69a74-8d43-47ec-9783-1505798a46e7.png)
+
+### Where do I find the crossbow upgrade?
+
+![RobloxScreenShot20211022_173610410](https://user-images.githubusercontent.com/91476507/138535695-f8d4dfda-dc98-4083-bb2b-6e5d1bbd4a9b.png)
+
 ### Where do I find the sniper rifle upgrade?
 
 ![RobloxScreenShot20211022_093108428](https://user-images.githubusercontent.com/91476507/138491974-5edbe5fb-67d4-406b-9338-fa6c23efa40f.png)
@@ -32,7 +40,7 @@ The game begins with your character facing City Hall. To the left is a bus stop.
 
 ### What is Stage 2?
 
-The game begins in Stage 1. After all the zombie diamonds have been converted to soldier diamonds, and all the zombies have been eliminated, the game enters Stage 2. During State 2, the two super zombie diamonds underneath the two electrical towers begin spawning 50 super zombies each. And the spawned zombies drop into a force field orb that equips them with a protective force field for 60 seconds, making them more difficult to kill. Also, the super zombies are stronger and more aggessive than the Stage 1 zombies.
+The game begins in Stage 1. After all the zombie diamonds have been converted to soldier diamonds, and all the zombies have been eliminated, the game enters Stage 2. During Stage 2, the two super zombie diamonds underneath the two electrical towers begin spawning 50 super zombies each. And the spawned zombies drop into a force field orb that equips them with a protective force field for 60 seconds, making them more difficult to kill. Also, the super zombies are stronger and more aggessive than the Stage 1 zombies.
 
 #### Before Stage 2:
 
