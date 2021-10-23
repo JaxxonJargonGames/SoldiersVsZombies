@@ -12,7 +12,7 @@ One key to eliminating all the zombies is to understand where they come from. Wh
 
 Another key is knowing about your weapons and how to use them. When you first enter the game your backpack contains a pistol, crossbow, and sniper rifle. The crossbow is pretty handy at shooting zombies. The sniper rifle is the only one of the three that can shoot through the glass windows. You score points when you shoot a window (1 point) or a zombie (1 point). If you accidentally shoot a soldier you lose 10 points.
 
-As you gain points you move up a level at certain milestones. With each new level you receive a new weapon in your backpack: 20 points earns Level 2 and gets you a grenade launcher, 40 points earns Level 3 and gets you an automatic rifle, 80 points earns Level 4 and gets you a rocket launcher, and 160 points earns Level 5 and gets you a railgun. The grenade launcher, rocket launcher and railgun are all capable of shattering multiple windows which allows you to score points.
+As you gain points you move up a level at certain milestones. With each new level you receive a new weapon in your backpack: 20 points earns Level 2 and gets you a grenade launcher, 40 points earns Level 3 and gets you an automatic rifle, 80 points earns Level 4 and gets you a rocket launcher, and 160 points earns Level 5 and gets you a railgun. The grenade launcher, rocket launcher and railgun are all capable of shattering multiple windows which allows you to score even more points.
 
 ## FAQ
 
@@ -30,4 +30,14 @@ The game begins with your character facing City Hall. To the left is a bus stop.
 
 ![RobloxScreenShot20211022_103516046](https://user-images.githubusercontent.com/91476507/138499150-00b62559-bcda-4539-9e28-244f3c541200.png)
 
+### What is Stage 2?
 
+The game begins in Stage 1. After all the zombie diamonds have been converted to soldier diamonds, and all the zombies have been eliminated, the game enters Stage 2. During State 2, the two super zombie diamonds underneath the two electrical towers begin spawning 50 super zombies each. And the spawned zombies drop into a force field orb that equips them with a protective force field for 60 seconds, making them more difficult to kill. Also, the super zombies are stronger and more aggessive than the Stage 1 zombies.
+
+#### Before Stage 2:
+
+![RobloxScreenShot20211022_170521951](https://user-images.githubusercontent.com/91476507/138534709-708be04e-ae7f-45ed-8e8b-2a40cf369acd.png)
+
+#### After Stage 2:
+
+![RobloxScreenShot20211022_170607161](https://user-images.githubusercontent.com/91476507/138534725-aab81a90-ebe5-4268-96ab-e4ad2e7a2b4c.png)
