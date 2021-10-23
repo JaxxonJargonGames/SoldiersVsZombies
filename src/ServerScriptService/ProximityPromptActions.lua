@@ -6,20 +6,24 @@ local WeaponUpgrades = require(ServerScriptService.WeaponUpgrades)
 
 local module = {}
 
+local function teleport(promptObject, character, duration, location)
+	promptObject.Enabled = false
+	ForceField.setupForceField(character, duration)
+	task.wait(3)
+	character.Humanoid.RootPart.CFrame = location.CFrame + Vector3.new(0, -4, 0)
+	promptObject.Enabled = true
+end
+
 function module.promptTriggeredActions(promptObject, player)
 	local character = player.Character
 	if promptObject.Parent.Parent.Name == "TeleportBench_1" then
-		character.Humanoid.RootPart.CFrame = workspace.Building_1.Spawn.CFrame + Vector3.new(0, -4, 0)
-		ForceField.setupForceField(character, 10)
+		teleport(promptObject, character, 20, workspace.Building_1.Spawn)
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_2" then
-		character.Humanoid.RootPart.CFrame = workspace.Building_2.Spawn.CFrame + Vector3.new(0, -4, 0)
-		ForceField.setupForceField(character, 20)
+		teleport(promptObject, character, 30, workspace.Building_2.Spawn)
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_3" then
-		character.Humanoid.RootPart.CFrame = workspace.Building_3.Spawn.CFrame + Vector3.new(0, -4, 0)
-		ForceField.setupForceField(character, 30)
+		teleport(promptObject, character, 40, workspace.Building_3.Spawn)
 	elseif promptObject.Parent.Parent.Name == "TeleportBench_4" then
-		character.Humanoid.RootPart.CFrame = workspace.Building_4.Spawn.CFrame + Vector3.new(0, -4, 0)
-		ForceField.setupForceField(character, 40)
+		teleport(promptObject, character, 50, workspace.Building_4.Spawn)
 	else
 		local toolName = promptObject.Parent.Parent.Name
 		WeaponUpgrades.upgradeTool(player, toolName)
