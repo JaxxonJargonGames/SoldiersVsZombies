@@ -1,20 +1,20 @@
 local ServerStorage = game:GetService("ServerStorage")
 
-local zombieDiamondsFolder = workspace:WaitForChild("SuperZombie_Diamonds")
+local zombiePortalsFolder = workspace:WaitForChild("SuperZombie_Portals")
 
-local DIAMOND_COOLDOWN = 2
+local PORTAL_COOLDOWN = 2
 local SUPER_ZOMBIE_COUNT = 100
 
-local function enableSuperDiamonds()
+local function enableSuperPortals()
 	local clone
-	local totalDiamonds = zombieDiamondsFolder:GetChildren()
-	for _, zombieDiamond in ipairs(totalDiamonds) do
-		local diamond = zombieDiamond.Diamond
+	local totalPortals = zombiePortalsFolder:GetChildren()
+	for _, zombiePortal in ipairs(totalPortals) do
+		local diamond = zombiePortal.Diamond
 		diamond.Color = BrickColor.new("Really red").Color
 	end
-	for count = 1, SUPER_ZOMBIE_COUNT / #totalDiamonds do
-		for _, zombieDiamond in ipairs(totalDiamonds) do
-			local diamond = zombieDiamond:FindFirstChild("Diamond")
+	for count = 1, SUPER_ZOMBIE_COUNT / #totalPortals do
+		for _, zombiePortal in ipairs(totalPortals) do
+			local diamond = zombiePortal:FindFirstChild("Diamond")
 			if diamond then
 				clone = ServerStorage.SuperZombie:Clone()
 				clone.Configuration.AttackDamage.Value = 35
@@ -23,7 +23,7 @@ local function enableSuperDiamonds()
 				clone.HumanoidRootPart.Position = diamond.Position
 				local folderName = clone.Name .. "s"
 				clone.Parent = workspace[folderName]
-				task.wait(DIAMOND_COOLDOWN / #totalDiamonds)
+				task.wait(PORTAL_COOLDOWN / #totalPortals)
 			end
 		end
 	end
@@ -38,8 +38,8 @@ end
 local event = Instance.new("BindableEvent")
 event.Name = "Stage2Event"
 event.Event:Connect(function()
-	workspace.Soldier_Diamonds:ClearAllChildren()
+	workspace.Soldier_Portals:ClearAllChildren()
 	enableOrbs()
-	enableSuperDiamonds()
+	enableSuperPortals()
 end)
 event.Parent = ServerStorage

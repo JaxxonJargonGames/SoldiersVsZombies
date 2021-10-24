@@ -1,13 +1,13 @@
 local ServerStorage = game:GetService("ServerStorage")
 
-local soldierDiamondsFolder = workspace:WaitForChild("Soldier_Diamonds")
+local soldierPortalsFolder = workspace:WaitForChild("Soldier_Portals")
 
-local DIAMOND_COOLDOWN = 20
+local PORTAL_COOLDOWN = 20
 
 while task.wait(0.1) do
-	local totalDiamonds = soldierDiamondsFolder:GetChildren()
-	for _, soldierDiamond in ipairs(totalDiamonds) do
-		local diamond = soldierDiamond:FindFirstChild("Diamond")
+	local totalPortals = soldierPortalsFolder:GetChildren()
+	for _, soldierPortal in ipairs(totalPortals) do
+		local diamond = soldierPortal:FindFirstChild("Diamond")
 		if diamond then
 			local clone = ServerStorage.Soldier:Clone()
 			clone.Configuration.AttackDamage.Value = math.random(5, 20)
@@ -19,7 +19,7 @@ while task.wait(0.1) do
 			clone.HumanoidRootPart.Position = diamond.Position
 			local folderName = clone.Name .. "s"
 			clone.Parent = workspace[folderName]
-            task.wait(DIAMOND_COOLDOWN / #totalDiamonds)
+            task.wait(PORTAL_COOLDOWN / #totalPortals)
 		end
 	end
 end

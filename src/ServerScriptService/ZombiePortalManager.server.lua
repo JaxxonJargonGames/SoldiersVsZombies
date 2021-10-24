@@ -1,11 +1,11 @@
 local ServerStorage = game:GetService("ServerStorage")
 
-local soldierDiamondsFolder = workspace:WaitForChild("Soldier_Diamonds")
-local zombieDiamondsFolder = workspace:WaitForChild("Zombie_Diamonds")
+local soldierPortalsFolder = workspace:WaitForChild("Soldier_Portals")
+local zombiePortalsFolder = workspace:WaitForChild("Zombie_Portals")
 
 local Stage2Event = ServerStorage:WaitForChild("Stage2Event")
 
-local DIAMOND_COOLDOWN = 10
+local PORTAL_COOLDOWN = 10
 
 local function onDiamondTouched(otherPart, diamond)
 	local character = otherPart.Parent
@@ -21,13 +21,13 @@ local function onDiamondTouched(otherPart, diamond)
 		else
 			diamond.Color = BrickColor.new("Lime green").Color
 			diamond.Sound.Playing = false
-			diamond.Parent.Parent = soldierDiamondsFolder
+			diamond.Parent.Parent = soldierPortalsFolder
 		end
 	end
 end
 
-for _, zombieDiamond in ipairs(zombieDiamondsFolder:GetChildren()) do
-	local diamond = zombieDiamond.Diamond
+for _, zombiePortal in ipairs(zombiePortalsFolder:GetChildren()) do
+	local diamond = zombiePortal.Diamond
 	diamond.Color = BrickColor.new("Really red").Color
 	diamond.Touched:Connect(function(otherPart)
 		onDiamondTouched(otherPart, diamond)
@@ -35,7 +35,7 @@ for _, zombieDiamond in ipairs(zombieDiamondsFolder:GetChildren()) do
 end
 
 workspace.Zombies.ChildRemoved:Connect(function(instance)
-	if #workspace.Zombie_Diamonds:GetChildren() == 0 and #workspace.Zombies:GetChildren() == 0 then
+	if #workspace.Zombie_Portals:GetChildren() == 0 and #workspace.Zombies:GetChildren() == 0 then
 		Stage2Event:Fire()
 	end
 end)
@@ -44,12 +44,12 @@ local clone
 local continue = true
 
 while continue and task.wait(0.1) do
-	local totalDiamonds = zombieDiamondsFolder:GetChildren()
-	if #totalDiamonds == 0 then
+	local totalPortals = zombiePortalsFolder:GetChildren()
+	if #totalPortals == 0 then
 		continue = false
 	end
-	for _, zombieDiamond in ipairs(totalDiamonds) do
-		local diamond = zombieDiamond:FindFirstChild("Diamond")
+	for _, zombiePortal in ipairs(totalPortals) do
+		local diamond = zombiePortal:FindFirstChild("Diamond")
 		if diamond then
 			clone = ServerStorage.Zombie:Clone()
 			clone.Configuration.AttackDamage.Value = 25
@@ -58,7 +58,7 @@ while continue and task.wait(0.1) do
 			clone.HumanoidRootPart.Position = diamond.Position
 			local folderName = clone.Name .. "s"
 			clone.Parent = workspace[folderName]
-			task.wait(DIAMOND_COOLDOWN / #totalDiamonds)
+			task.wait(PORTAL_COOLDOWN / #totalPortals)
 		end
 	end
 end
