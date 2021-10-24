@@ -38,6 +38,18 @@ The game begins with your character facing City Hall. To the left is a bus stop.
 
 ![RobloxScreenShot20211022_103516046](https://user-images.githubusercontent.com/91476507/138499150-00b62559-bcda-4539-9e28-244f3c541200.png)
 
+### Where are the teleport benches and how do they work?
+
+There are four benches in the town square that have been equipped with teleportation capability. When you approach one of these benches you will see a prompt letting you know what building roof you will be teleported to. After teleporting you will have a force field shield active for a short while.
+
+#### Before Teleporting:
+
+![RobloxScreenShot20211023_114149495](https://user-images.githubusercontent.com/91476507/138568048-13ff275c-bc02-4fa2-b9e0-3cc84eb4b5ba.png)
+
+### After Teleporting:
+
+![RobloxScreenShot20211023_114400837](https://user-images.githubusercontent.com/91476507/138568073-50308654-59e9-4b15-ae5d-3373427d1ced.png)
+
 ### What is Stage 2?
 
 The game begins in Stage 1. After all the zombie diamonds have been converted to soldier diamonds, and all the zombies have been eliminated, the game enters Stage 2. During Stage 2, the two super zombie diamonds underneath the two electrical towers begin spawning 50 super zombies each. And the spawned zombies drop into a force field orb that equips them with a protective force field for 60 seconds, making them more difficult to kill. Also, the super zombies are stronger and more aggessive than the Stage 1 zombies.
