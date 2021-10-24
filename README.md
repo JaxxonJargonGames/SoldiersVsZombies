@@ -8,7 +8,7 @@ This game can be played on Roblox here: https://www.roblox.com/games/7178572180/
 
 ![RobloxScreenShot20211018_103536150](https://user-images.githubusercontent.com/91476507/138190458-6288e1cc-f481-4388-b0f6-fa1e57e58c21.png)
 
-One key to eliminating all the zombies is to understand where they come from. When the game begins there are four red, zombie-spawning diamonds located in each of the four office buildings. And while not a lot is known or understood about these diamonds, we do know that they spawn zombies and that they can be converted to a portal that allows our military to send soldiers through the diamonds. When you touch or pass through one of these diamonds they change from red to green and allow friendly soldiers to enter the game space and help shoot the zombies. So you definitely want to convert all the zombie diamonds while avoiding getting attacked by the zombies.
+One key to eliminating all the zombies is to understand where they come from. When the game begins there are four red, zombie-spawning portals located in each of the four office buildings. And while not a lot is known or understood about these portals, we do know that they spawn zombies and that they can be converted to a friendly portal that allows our military to send soldiers through the portal. When you touch or pass through one of these portals they change from red to green and allow friendly soldiers to enter the game space and help shoot the zombies. So you definitely want to convert all the zombie portals while avoiding getting attacked by the zombies.
 
 Another key is knowing about your weapons and how to use them. When you first enter the game your backpack contains a pistol, crossbow, and sniper rifle. The crossbow is pretty handy at shooting zombies. The sniper rifle is the only one of the three that can shoot through the glass windows. You score points when you shoot a window (1 point) or a zombie (1 point). If you accidentally shoot a soldier you lose 10 points.
 
@@ -18,7 +18,7 @@ As you gain points you move up a level at certain milestones. With each new leve
 
 ### How does the game begin?
 
-The game begins with your character facing City Hall. To the left is a bus stop. To the right is the town square. Further to the right is a one-story office building containing one of the red zombie diamonds. Zombies start spawning automatically from the four zombie diamonds.
+The game begins with your character facing City Hall. To the left is a bus stop. To the right is the town square. Further to the right is a one-story office building containing one of the red zombie portals. Zombies start spawning automatically from the four zombie portals.
 
 ![RobloxScreenShot20211022_095528798](https://user-images.githubusercontent.com/91476507/138496974-7990a742-728e-4c01-8a9f-3906d8376509.png)
 
@@ -52,7 +52,7 @@ There are four benches in the town square that have been equipped with teleporta
 
 ### What is Stage 2?
 
-The game begins in Stage 1. After all the zombie diamonds have been converted to soldier diamonds, and all the zombies have been eliminated, the game enters Stage 2. During Stage 2, the two super zombie diamonds underneath the two electrical towers begin spawning 50 super zombies each. And the spawned zombies drop into a force field orb that equips them with a protective force field for 60 seconds, making them more difficult to kill. Also, the super zombies are stronger and more aggessive than the Stage 1 zombies.
+The game begins in Stage 1. After all the zombie portals have been converted to soldier portals, and all the zombies have been eliminated, the game enters Stage 2. During Stage 2, the two super zombie portals underneath the two electrical towers begin spawning 50 super zombies each. And the spawned zombies drop into a force field orb that equips them with a protective force field for 60 seconds, making them more difficult to kill. Also, the super zombies are stronger and more aggessive than the Stage 1 zombies.
 
 #### Before Stage 2:
 
