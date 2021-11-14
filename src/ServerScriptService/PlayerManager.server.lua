@@ -122,7 +122,7 @@ end
 
 game.Players.PlayerAdded:Connect(function(player)
 	print("PlayerAdded")
-	respawn = false
+	local respawn = false
 	player.CharacterAdded:Connect(function(character)
 		print("CharacterAdded")
 		local humanoid = character:WaitForChild("Humanoid")
