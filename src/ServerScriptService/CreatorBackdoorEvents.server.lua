@@ -28,7 +28,7 @@ event.Name = "Stage2BackdoorEvent"
 event.OnServerEvent:Connect(function(player)
 	if player.UserId == game.CreatorId then
 		setupAllWeaponsAndUpgrades(player)
-		workspace.Zombie_Diamonds:ClearAllChildren()
+		workspace.Zombie_Portals:ClearAllChildren()
 		workspace.Zombies:ClearAllChildren()
 	end
 end)
