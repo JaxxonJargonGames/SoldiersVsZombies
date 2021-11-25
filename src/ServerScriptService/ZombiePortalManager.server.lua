@@ -35,7 +35,7 @@ for _, zombiePortal in ipairs(zombiePortalsFolder:GetChildren()) do
 end
 
 workspace.Zombies.ChildRemoved:Connect(function(instance)
-	if #workspace.Zombie_Portals:GetChildren() == 0 and #workspace.Zombies:GetChildren() == 0 then
+	if #workspace.Zombie_Portals:GetChildren() == 0 then
 		Stage2Event:Fire()
 	end
 end)
