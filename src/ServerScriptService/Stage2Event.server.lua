@@ -38,7 +38,7 @@ end
 local event = Instance.new("BindableEvent")
 event.Name = "Stage2Event"
 event.Event:Connect(function()
-	workspace.Soldier_Portals:ClearAllChildren()
+	task.wait(30) -- Give the player time to run over to the orbs to watch the show.
 	enableOrbs()
 	enableSuperPortals()
 end)
