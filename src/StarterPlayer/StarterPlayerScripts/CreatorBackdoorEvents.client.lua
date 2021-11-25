@@ -1,8 +1,5 @@
 local ContextActionService = game:GetService("ContextActionService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
-
-local player = Players.LocalPlayer
 
 local Event = ReplicatedStorage:WaitForChild("ResetEvent")
 local ACTION_NAME = "Reset"
@@ -12,7 +9,7 @@ local INPUT_TYPES = Enum.KeyCode.Delete
 local function onResetEvent(actionName, inputState, inputObject)
 	if inputState == Enum.UserInputState.Begin then
 		if actionName == ACTION_NAME then
-			Event:FireServer(player)
+			Event:FireServer()
 		end
 	end
 end
@@ -27,7 +24,7 @@ local INPUT_TYPES = Enum.KeyCode.Insert
 local function onStage2BackdoorEvent(actionName, inputState, inputObject)
 	if inputState == Enum.UserInputState.Begin then
 		if actionName == ACTION_NAME then
-			Event:FireServer(player)
+			Event:FireServer()
 		end
 	end
 end
@@ -42,7 +39,7 @@ local INPUT_TYPES = Enum.KeyCode.U
 local function onWeaponUpgradesEvent(actionName, inputState, inputObject)
 	if inputState == Enum.UserInputState.Begin then
 		if actionName == ACTION_NAME then
-			Event:FireServer(player)
+			Event:FireServer()
 		end
 	end
 end
