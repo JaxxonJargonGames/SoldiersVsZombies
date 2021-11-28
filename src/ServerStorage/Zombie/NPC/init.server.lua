@@ -130,15 +130,43 @@ local function destroy()
 	maid:destroy()
 end
 
+--local function patrol()
+--	while isAlive() do
+--		if not attacking then
+--			local position = getRandomPointInCircle(startPosition, PATROL_RADIUS)
+--			maid.humanoid.WalkSpeed = PATROL_WALKSPEED
+--			maid.humanoid:MoveTo(position)
+--		end
+
+--		wait(random:NextInteger(MIN_REPOSITION_TIME, MAX_REPOSITION_TIME))
+--	end
+--end
+
+local PathfindingService = game:GetService("PathfindingService")
+
+local path = PathfindingService:CreatePath()
+
+maid.humanoid.WalkSpeed = PATROL_WALKSPEED
+
 local function patrol()
 	while isAlive() do
 		if not attacking then
-			local position = getRandomPointInCircle(startPosition, PATROL_RADIUS)
-			maid.humanoid.WalkSpeed = PATROL_WALKSPEED
-			maid.humanoid:MoveTo(position)
+			local startingPosition = script.Parent.HumanoidRootPart.Position
+			local endingPosition = getRandomPointInCircle(startPosition, PATROL_RADIUS)
+			path:ComputeAsync(startingPosition, endingPosition)
+			if path.Status == Enum.PathStatus.Success then
+				local waypoints = path:GetWaypoints()
+				for _, waypoint in ipairs(waypoints) do
+					if waypoint.Action == Enum.PathWaypointAction.Jump then
+						maid.humanoid.Jump = true
+					end					
+					maid.humanoid:MoveTo(waypoint.Position)
+					maid.humanoid.MoveToFinished:Wait()
+				end
+				wait(random:NextInteger(MIN_REPOSITION_TIME, MAX_REPOSITION_TIME))
+			end
 		end
-
-		wait(random:NextInteger(MIN_REPOSITION_TIME, MAX_REPOSITION_TIME))
+		task.wait(0.1)
 	end
 end
 

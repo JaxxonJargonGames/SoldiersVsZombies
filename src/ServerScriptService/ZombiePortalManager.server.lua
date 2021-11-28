@@ -54,7 +54,7 @@ while continue and task.wait(0.1) do
 			clone = ServerStorage.Zombie:Clone()
 			clone.Configuration.AttackDamage.Value = 25
 			clone.Configuration.AttackRadius.Value = math.random(50, 100)
-			clone.Configuration.PatrolRadius.Value = math.random(20, 4000)
+			clone.Configuration.PatrolRadius.Value = math.random(20, 400)
 			clone.HumanoidRootPart.Position = diamond.Position
 			local folderName = clone.Name .. "s"
 			clone.Parent = workspace[folderName]
